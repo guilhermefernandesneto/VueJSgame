@@ -45,3 +45,38 @@
 					<!-- <div v-repeat="grid" class="grid-cell" v-style="width: cellW + 'px',height: cellW + 'px'"></div> -->
 				</div>
 	      </div>
+
+		    <div class="tile-container" id="tile-container">
+
+				<!-- Component way with template inside component obj -->
+				<!-- <div v-repeat="tiles" v-component="tile"></div> -->
+
+				<!-- Component way with computed function -->
+				<div v-repeat="tiles" v-component="tile"  v-style="$transform: 'translate(' + calcStyleX + 'px,' + calcStyleY + 'px)'" class="tile tile-{{value}} tile-new{{merged ? ' tile-merged' : ''}}">
+					<div class="tile-inner">{{value}}</div>
+				</div>
+
+				<!-- Use of the directive v-style -->
+				<!-- <div v-repeat="tiles" v-style="$transform: 'scale(' + x + ')'" class="tile tile-{{value}} tile-new">
+					<div class="tile-inner">{{value}}</div>
+				</div> -->
+
+	      </div>
+
+	    </div>
+		<p class="game-explanation">
+	    <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+	  </p>
+	  <hr>
+
+	  <p>
+	    <strong class="important">NOTE:</strong> This game was written using Vue.js
+	  </p>
+
+	  <hr>
+
+	  <p>
+	    Created by <a href="https://github.com/axilleasiv">Achilleas Kiritsakas</a> based on 2048 by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+	  </p>
+
+	  </div>    
